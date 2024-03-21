@@ -70,6 +70,7 @@ const (
 	IdTypeMeta               = "systemUrn"
 	IdTypeOrgID              = "ouid"
 	IdTypeCostcenter         = "costcenter"
+	IdTypeStudyUnit          = "study_unit"
 	IdTypeNSD                = "nsd"
 	IdTypeAnsattnr           = "ansattnr"
 	IdTypeNIN                = "nin"

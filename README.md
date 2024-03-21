@@ -1,3 +1,3 @@
 # TIA
 
-This repository conatins the domain models for the TIA project at NTNU
+This repository contains the domain models for the TIA project at NTNU
