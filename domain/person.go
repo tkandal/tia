@@ -2,7 +2,6 @@ package domain
 
 import (
 	"encoding/json"
-	"git.it.ntnu.no/df/tia/backend/appapi-push/types"
 	"strings"
 	"time"
 )
@@ -19,7 +18,7 @@ type Person struct {
 	ContactInfo       []ContactInfo    `json:"contactInfo,omitempty" bson:"contactInfo,omitempty"`
 	Cars              []Car            `json:"cars,omitempty" bson:"cars,omitempty"`
 	Status            []Status         `json:"status,omitempty" bson:"status,omitempty"`
-	DateOfBirth       *types.LocalDate `json:"dateOfBirth,omitempty" bson:"dateOfBirth,omitempty"`
+	DateOfBirth       *LocalDate `json:"dateOfBirth,omitempty" bson:"dateOfBirth,omitempty"`
 	Gender            string           `json:"gender,omitempty" bson:"gender,omitempty"`
 	PreferredLanguage string           `json:"preferredLanguage,omitempty" bson:"preferredLanguage,omitempty"`
 	NativeTongue      []string         `json:"nativeTongue,omitempty" bson:"nativeTongue,omitempty"`
@@ -99,7 +98,7 @@ func (pb *PersonBuilder) Status(typ string, value string) *PersonBuilder {
 // DateOfBirth sets date of birth
 func (pb *PersonBuilder) DateOfBirth(dob time.Time) *PersonBuilder {
 	if !dob.IsZero() {
-		pb.pers.DateOfBirth = &types.LocalDate{Time: dob}
+		pb.pers.DateOfBirth = &LocalDate{Time: dob}
 	}
 	return pb
 }
