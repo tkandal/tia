@@ -14,15 +14,15 @@ import (
 // swagger:model Person
 type Person struct {
 	Entity
-	Name              []Name           `json:"name,omitempty" bson:"name,omitempty"`
-	ContactInfo       []ContactInfo    `json:"contactInfo,omitempty" bson:"contactInfo,omitempty"`
-	Cars              []Car            `json:"cars,omitempty" bson:"cars,omitempty"`
-	Status            []Status         `json:"status,omitempty" bson:"status,omitempty"`
-	DateOfBirth       *LocalDate `json:"dateOfBirth,omitempty" bson:"dateOfBirth,omitempty"`
-	Gender            string           `json:"gender,omitempty" bson:"gender,omitempty"`
-	PreferredLanguage string           `json:"preferredLanguage,omitempty" bson:"preferredLanguage,omitempty"`
-	NativeTongue      []string         `json:"nativeTongue,omitempty" bson:"nativeTongue,omitempty"`
-	SpecialNeed       []string         `json:"specialNeed,omitempty" bson:"specialNeed,omitempty"`
+	Name              []Name        `json:"name,omitempty" bson:"name,omitempty"`
+	ContactInfo       []ContactInfo `json:"contactInfo,omitempty" bson:"contactInfo,omitempty"`
+	Cars              []Car         `json:"cars,omitempty" bson:"cars,omitempty"`
+	Status            []Status      `json:"status,omitempty" bson:"status,omitempty"`
+	DateOfBirth       *LocalDate    `json:"dateOfBirth,omitempty" bson:"dateOfBirth,omitempty"`
+	Gender            string        `json:"gender,omitempty" bson:"gender,omitempty"`
+	PreferredLanguage string        `json:"preferredLanguage,omitempty" bson:"preferredLanguage,omitempty"`
+	NativeTongue      []string      `json:"nativeTongue,omitempty" bson:"nativeTongue,omitempty"`
+	SpecialNeed       []string      `json:"specialNeed,omitempty" bson:"specialNeed,omitempty"`
 }
 
 func (p *Person) String() string {

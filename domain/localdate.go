@@ -13,7 +13,6 @@ const (
 	dateFormatISO = "2006-01-02"
 )
 
-
 // LocalDate represents a date in ISO-format (YYYY-mm-dd).
 type LocalDate struct {
 	time.Time
