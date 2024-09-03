@@ -57,7 +57,7 @@ func NewPersonBuilder(ss string, ssID string) (*PersonBuilder, error) {
 func (pb *PersonBuilder) Name(typ string, value string) *PersonBuilder {
 	if len(typ) > 0 && len(value) > 0 {
 		if pb.pers.Name == nil {
-			pb.pers.Name = []Name{}
+			pb.pers.Name = make([]Name, 0)
 		}
 		pb.pers.Name = append(pb.pers.Name, MakeName(typ, value))
 	}
@@ -68,7 +68,7 @@ func (pb *PersonBuilder) Name(typ string, value string) *PersonBuilder {
 func (pb *PersonBuilder) ContactInfo(typ string, value string) *PersonBuilder {
 	if len(typ) > 0 && len(value) > 0 {
 		if pb.pers.ContactInfo == nil {
-			pb.pers.ContactInfo = []ContactInfo{}
+			pb.pers.ContactInfo = make([]ContactInfo, 0)
 		}
 		pb.pers.ContactInfo = append(pb.pers.ContactInfo, MakeContactInfo(typ, value))
 	}
@@ -78,7 +78,7 @@ func (pb *PersonBuilder) ContactInfo(typ string, value string) *PersonBuilder {
 // Car adds a car
 func (pb *PersonBuilder) Car(c Car) *PersonBuilder {
 	if pb.pers.Cars == nil {
-		pb.pers.Cars = []Car{}
+		pb.pers.Cars = make([]Car, 0)
 	}
 	pb.pers.Cars = append(pb.pers.Cars, c)
 	return pb
@@ -88,7 +88,7 @@ func (pb *PersonBuilder) Car(c Car) *PersonBuilder {
 func (pb *PersonBuilder) Status(typ string, value string) *PersonBuilder {
 	if len(typ) > 0 && len(value) > 0 {
 		if pb.pers.Status == nil {
-			pb.pers.Status = []Status{}
+			pb.pers.Status = make([]Status, 0)
 		}
 		pb.pers.Status = append(pb.pers.Status, MakeStatus(typ, value))
 	}
@@ -123,7 +123,7 @@ func (pb *PersonBuilder) PreferredLanguage(lang string) *PersonBuilder {
 func (pb *PersonBuilder) NativeTongue(nt string) *PersonBuilder {
 	if len(nt) > 0 {
 		if pb.pers.NativeTongue == nil {
-			pb.pers.NativeTongue = []string{}
+			pb.pers.NativeTongue = make([]string, 0)
 		}
 		pb.pers.NativeTongue = append(pb.pers.NativeTongue, nt)
 	}
@@ -134,7 +134,7 @@ func (pb *PersonBuilder) NativeTongue(nt string) *PersonBuilder {
 func (pb *PersonBuilder) SpecialNeed(sn string) *PersonBuilder {
 	if len(sn) > 0 {
 		if pb.pers.SpecialNeed == nil {
-			pb.pers.SpecialNeed = []string{}
+			pb.pers.SpecialNeed = make([]string, 0)
 		}
 		pb.pers.SpecialNeed = append(pb.pers.SpecialNeed, sn)
 	}
@@ -145,7 +145,7 @@ func (pb *PersonBuilder) SpecialNeed(sn string) *PersonBuilder {
 func (pb *PersonBuilder) EntityKey(typ string, value string) *PersonBuilder {
 	if len(typ) > 0 && len(value) > 0 {
 		if pb.pers.EntityKeys == nil {
-			pb.pers.EntityKeys = []EntityKey{}
+			pb.pers.EntityKeys = make([]EntityKey, 0)
 		}
 		pb.pers.EntityKeys = append(pb.pers.EntityKeys, MakeEntityKey(typ, value))
 	}
@@ -155,7 +155,7 @@ func (pb *PersonBuilder) EntityKey(typ string, value string) *PersonBuilder {
 // Role adds a new role
 func (pb *PersonBuilder) Role(r Role) *PersonBuilder {
 	if pb.pers.RoleList == nil {
-		pb.pers.RoleList = []Role{}
+		pb.pers.RoleList = make([]Role, 0)
 	}
 	pb.pers.RoleList = append(pb.pers.RoleList, r)
 	return pb
