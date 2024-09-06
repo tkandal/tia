@@ -5,7 +5,7 @@ import (
 )
 
 /*
- * Copyright (c) 2019 Norwegian University of Science and Technology
+ * Copyright (c) 2019, 2024 Norwegian University of Science and Technology
  */
 
 // EntityKey represents a key-value and -type in TIA
@@ -27,10 +27,6 @@ func MakeEntityKey(typ string, value string) EntityKey {
 
 // NewEntityKey returns a pointer to a new EntityKey struct
 func NewEntityKey(typ string, value string) *EntityKey {
-	id := fmt.Sprintf("%s:%s", typ, value)
-	return &EntityKey{
-		Type:        typ,
-		Value:       value,
-		EntityKeyID: id,
-	}
+	ek := MakeEntityKey(typ, value)
+	return &ek
 }
