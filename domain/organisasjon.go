@@ -36,13 +36,11 @@ func NewOrganisasjonBuilder(ss string, ssID string) (*OrganisasjonBuilder, error
 	return builder, nil
 }
 
-func (ob *OrganisasjonBuilder) Name(typ string, value string) *OrganisasjonBuilder {
-	if len(typ) > 0 && len(value) > 0 {
-		if ob.org.Name == nil {
-			ob.org.Name = make([]Name, 0)
-		}
-		ob.org.Name = append(ob.org.Name, MakeName(typ, value, ""))
+func (ob *OrganisasjonBuilder) Name(name Name) *OrganisasjonBuilder {
+	if ob.org.Name == nil {
+		ob.org.Name = make([]Name, 0)
 	}
+	ob.org.Name = append(ob.org.Name, name)
 	return ob
 }
 
@@ -54,13 +52,11 @@ func (ob *OrganisasjonBuilder) ContactInfo(ci ContactInfo) *OrganisasjonBuilder 
 	return ob
 }
 
-func (ob *OrganisasjonBuilder) Status(typ string, value string) *OrganisasjonBuilder {
-	if len(typ) > 0 && len(value) > 0 {
-		if ob.org.Status == nil {
-			ob.org.Status = make([]Status, 0)
-		}
-		ob.org.Status = append(ob.org.Status, MakeStatus(typ, value))
+func (ob *OrganisasjonBuilder) Status(status Status) *OrganisasjonBuilder {
+	if ob.org.Status == nil {
+		ob.org.Status = make([]Status, 0)
 	}
+	ob.org.Status = append(ob.org.Status, status)
 	return ob
 }
 
