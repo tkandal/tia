@@ -42,7 +42,7 @@ func (cb *CarBuilder) RegistrationTime(rt time.Time) *CarBuilder {
 // Permissions is permission for parking at NTNU
 func (cb *CarBuilder) Permissions(perms []string) *CarBuilder {
 	if cb.car.Permissions == nil {
-		cb.car.Permissions = []string{}
+		cb.car.Permissions = make([]string, 0)
 	}
 	cb.car.Permissions = append(cb.car.Permissions, perms...)
 	return cb

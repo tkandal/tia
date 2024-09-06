@@ -54,24 +54,21 @@ func NewPersonBuilder(ss string, ssID string) (*PersonBuilder, error) {
 }
 
 // Name adds a name
-func (pb *PersonBuilder) Name(typ string, value string) *PersonBuilder {
-	if len(typ) > 0 && len(value) > 0 {
-		if pb.pers.Name == nil {
-			pb.pers.Name = make([]Name, 0)
-		}
-		pb.pers.Name = append(pb.pers.Name, MakeName(typ, value))
+func (pb *PersonBuilder) Name(n Name) *PersonBuilder {
+	if pb.pers.Name == nil {
+		pb.pers.Name = make([]Name, 0)
 	}
+	pb.pers.Name = append(pb.pers.Name, n)
 	return pb
 }
 
 // ContactInfo adds contact information
-func (pb *PersonBuilder) ContactInfo(typ string, value string) *PersonBuilder {
-	if len(typ) > 0 && len(value) > 0 {
-		if pb.pers.ContactInfo == nil {
-			pb.pers.ContactInfo = make([]ContactInfo, 0)
-		}
-		pb.pers.ContactInfo = append(pb.pers.ContactInfo, MakeContactInfo(typ, value))
+func (pb *PersonBuilder) ContactInfo(ci ContactInfo) *PersonBuilder {
+	if pb.pers.ContactInfo == nil {
+		pb.pers.ContactInfo = make([]ContactInfo, 0)
 	}
+	pb.pers.ContactInfo = append(pb.pers.ContactInfo, ci)
+
 	return pb
 }
 
@@ -85,13 +82,11 @@ func (pb *PersonBuilder) Car(c Car) *PersonBuilder {
 }
 
 // Status adds a status
-func (pb *PersonBuilder) Status(typ string, value string) *PersonBuilder {
-	if len(typ) > 0 && len(value) > 0 {
-		if pb.pers.Status == nil {
-			pb.pers.Status = make([]Status, 0)
-		}
-		pb.pers.Status = append(pb.pers.Status, MakeStatus(typ, value))
+func (pb *PersonBuilder) Status(s Status) *PersonBuilder {
+	if pb.pers.Status == nil {
+		pb.pers.Status = make([]Status, 0)
 	}
+	pb.pers.Status = append(pb.pers.Status, s)
 	return pb
 }
 
