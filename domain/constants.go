@@ -141,6 +141,7 @@ const (
 	IdTypeDFOMedarbeiderGruppe       = "dfo_mg"
 	IdTypeDFOMedarbeiderUndergruppe  = "dfo_mug"
 	IdTypePassnummer                 = "passnummer"
+	IdTypeNationalID                 = "national_id"
 	IdTypeDFOSocialSecurityNumber    = "dfo_social_security_number"
 	IdTypeDFOTaxIdentificationNumber = "dfo_tax_identification_number"
 	IdTypeDFOVatIdentificationNumber = "dfo_vat_identification_number"
